@@ -1,0 +1,12 @@
+#form {
+    display: none;
+}
+
+.card{
+    border: solid;
+    background-color: gray;
+    margin: 10px;
+    border-radius: 15%;
+    width:200px;
+    height: 250px;
+}

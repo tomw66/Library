@@ -6,7 +6,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<h1>Library</h1>
+<button id="newBook" onclick="openForm()">New Book</button>
+<div id="form">
+    <form onsubmit="closeForm(); addBookToLibrary(); return false">
+        <h2>Add new book</h2>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title"><br><br>
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" name="author"><br><br>
+        <label for="pages">Number of pages:</label><br>
+        <input type="number" id="pages" name="pages"><br><br>
+        <input type="checkbox" id="read" name="read">
+        <label for="read">Read</label><br><br>
+        <button type ="submit">Submit</button>
+        <button onclick="closeForm()" type="button">Close</button>
+    </form>
+</div>
+<div id="container"></div>
 </body>
 <script type="text/javascript" src="script.js"></script>
 </html>
