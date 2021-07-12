@@ -19,9 +19,11 @@ function Book(title, author, pages, read) {
     myLibrary.push(newBook);
     loop();
   }
+
   function loop() {
     document.querySelectorAll('.card').forEach(e => e.remove());
     for (let i = 0; i < myLibrary.length; i++) {
+      //Generate card
       const card = document.createElement('div');
       card.classList.add('card');
       container.appendChild(card);  
@@ -30,6 +32,7 @@ function Book(title, author, pages, read) {
       text.innerHTML = myLibrary[i].info();
       card.classList.add('text');
       card.appendChild(text);  
+      //Generate delete button
       const deleteButton = document.createElement("BUTTON"); 
       deleteButton.innerHTML = "Delete";
       deleteButton.id = "delete" + i;
@@ -38,6 +41,7 @@ function Book(title, author, pages, read) {
         document.getElementById("card" + i).remove(); 
       }
       card.appendChild(deleteButton);  
+      //Generate read button
       const readButton = document.createElement("BUTTON"); 
       if (myLibrary[i].read === true) {
         readButton.innerHTML = "Not read"}
@@ -59,8 +63,6 @@ function Book(title, author, pages, read) {
       card.appendChild(readButton); 
     }
   }
-
-  const theHobbit = new Book('The hobbit', 'J.R.R. Tolkien', 295, 'not read yet')
 
   function openForm() {
     document.getElementById("form").style.display = "block";
