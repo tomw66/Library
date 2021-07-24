@@ -1,16 +1,18 @@
 let myLibrary = [];
 const container = document.querySelector('#container');
 
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function() {
-      if (this.read === true) {
-      return title + "<br><br>" + author + "<br><br>" + pages + " pages<br><br>Finished and enjoyed!"}
-      else {
-        return title + "<br><br>" + author + "<br><br>" + pages + " pages<br><br>Still to read!"}
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  info() {
+    if (this.read === true) {
+      return this.title + "<br><br>" + this.author + "<br><br>" + this.pages + " pages<br><br>Finished and enjoyed!"}
+    else {
+      return this.title + "<br><br>" + this.author + "<br><br>" + this.pages + " pages<br><br>Still to read!"}
     }
   }
 
